@@ -1,0 +1,7 @@
+CN1C=NC2=C1C(=O)N(C(=O)N2C)C
+CNC[C@H](O)c1ccc(O)c(O)c1
+C1=CC(=C(C=C1C(CN)O)O)O
+CNCCC(c1ccccc1)Oc2ccc(cc2)C(F)(F)F
+C1=CC=CS1
+ClC1=CC=C(C(C(Cl)(Cl)Cl)C2=CC=C(C=C2)Cl)C=C1
+
