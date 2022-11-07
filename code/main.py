@@ -7,7 +7,7 @@ Created on Mon Nov  7 21:35:42 2022
 """
 
 from smiles_string_class import SmilesString
-from smiles_string_list_class import SmilesStringsList
+from smiles_strings_list_class import SmilesStringsList
 
 
 ''' 
