@@ -12,11 +12,11 @@ from smiles_strings_list_class import SmilesStringsList
 
 ''' 
     What is smiles and list_smiles:
-        
+
     class SMILES:
         def __init__(self, smiles):             smiles = str
             self.smiles = smiles
-    
+
     class LIST_SMILES:
         def __init__(self, list_smiles):        list_smiles = [SMILES]
             self.list_smiles = list_smiles
