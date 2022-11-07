@@ -1,5 +1,15 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Nov  7 21:35:42 2022
+
+@author: mac
+"""
+
 from smiles_string_class import SmilesString
 from smiles_string_list_class import SmilesStringsList
+
+
 ''' 
     What is smiles and list_smiles:
         
@@ -11,6 +21,8 @@ from smiles_string_list_class import SmilesStringsList
         def __init__(self, list_smiles):        list_smiles = [SMILES]
             self.list_smiles = list_smiles
 '''
+
+
 #COMMANDS#
 COUNT_SUBSTRINGS  = 'C'
 MOLECULAR_FORMULA = 'M'
