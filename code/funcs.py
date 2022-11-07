@@ -7,3 +7,7 @@ Created on Mon Nov  7 21:36:22 2022
 """
 
 
+#def smiles_from_file_io():
+
+
+#def smiles_to_file_io():
