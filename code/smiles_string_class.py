@@ -1,6 +1,6 @@
-class SMILES:
-    def __init__(self, smiles):
-        self.smiles = smiles
+class SmilesString:
+    def __init__(self, smiles_string):
+        self.smiles = smiles_string
 
     '''
     validate(): method for class SMILES.

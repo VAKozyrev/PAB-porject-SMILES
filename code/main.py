@@ -1,6 +1,5 @@
-import class_LIST_SMILES as list_smiles
-import class_SMILES as smiles
-
+from smiles_string_class import SmilesString
+from smiles_string_list_class import SmilesStringsList
 ''' 
     What is smiles and list_smiles:
         
