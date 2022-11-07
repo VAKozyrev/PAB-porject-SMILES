@@ -63,9 +63,9 @@ def main():
 
 
     """ 
-    SMILES_from_file(): function which ask user to enter name of file 
+    smiles_from_file_io(): function which ask user to enter name of file 
     for reading, if file can't be read print 'Failed reading file + 'file name'
-    else: read only valid SMILES and return object LIST_SMILES with 
+    else: read only valid SMILES and return object smiles_strings_list with 
     valid SMILES from the file.
     """
 
@@ -113,9 +113,9 @@ def main():
         answer = input(SAVE_SMILES)
 
     """
-    SMILES_to_file_io(list_SMILES): function that asks user for file name, If program 
+    smiles_to_file_io(smiles_strings_list): function that asks user for file name, if program 
     can't open the file, print 'Failed open file + 'file name'. Else, program 
-    write SMILES from list_SMILES to the file, if that SMILES is not already 
+    write SMILES from smiles_strings_list to the file, if that SMILES is not already 
     in the file. 
     """
 
