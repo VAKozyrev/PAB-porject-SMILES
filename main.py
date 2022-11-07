@@ -1,5 +1,5 @@
-import class_LIST_SMILES as list_smiles
-import class_SMILES as smiles
+from class_LIST_SMILES import ListSmiles
+from class_SMILES import Smiles
 
 ''' 
     What is smiles and list_smiles:
@@ -43,7 +43,8 @@ SMILES_INVALID  = 'SMILES invalid'
 
           
 def main():
-
+    
+    list_smiles = ListSmiles([])
    '''Firs step, program asks if you want to load SMILES strings from file or 
    not. Repeat question untill answer != Y or N. If answer is NO program do 
    nothing and print list of all commands. If answer is YES program ask for
@@ -84,7 +85,7 @@ def main():
         if command == MOLECULAR_FORMULA:
             
         if command == DISSIMILARITY:
-            
+    
         if command == INPUT_NEW_SMILES:
         
         if command == HELP:

@@ -1,4 +1,4 @@
-class SMILES:
+class Smiles:
     def __init__(self, smiles):
         self.smiles = smiles
 
