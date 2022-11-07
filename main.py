@@ -44,16 +44,16 @@ SMILES_INVALID  = 'SMILES invalid'
           
 def main():
 
-'''Firs step, program asks if you want to load SMILES strings from file or 
+   '''Firs step, program asks if you want to load SMILES strings from file or 
    not. Repeat question untill answer != Y or N. If answer is NO program do 
    nothing and print list of all commands. If answer is YES program ask for
    file name.
-'''
+   '''
 
     answer = input(LOAD_SOURSE)
-    while answer != YES and answer != NO:
-        print(INVALID_ANSWER)
-        answer = input(LOAD_SOURSE)
+        while answer != YES and answer != NO:
+            print(INVALID_ANSWER)
+            answer = input(LOAD_SOURSE)
         
    '''SMILES_from_file(): function which ask user to enter name of file 
    for reading, if file can't be read print 'Failed reading file + 'file name'
@@ -68,13 +68,13 @@ def main():
     if answer == NO:
         list_SMILES = LIST_SMILES([])
     
-'''Second step, program print list of all commands
-'''
+    '''Second step, program print list of all commands
+    '''
 
     print(HELP_MESSAGE)
         
-'''Fird step, main loop with all commands.
-'''
+    '''Fird step, main loop with all commands.
+    '''
 
     command = input()                    
     while command.upper() != QUIT:
@@ -92,9 +92,9 @@ def main():
         
         command = input()
     
-'''Forth step, program ask if you want to save SMILES to file or not. If answer
-is NO program do nothing and close. If answer is YES program ask for a file name. 
-'''
+    '''Forth step, program ask if you want to save SMILES to file or not. If answer
+    is NO program do nothing and close. If answer is YES program ask for a file name. 
+    '''
 
     answer = input(SAVE_SMILES)          
     while answer != YES and answer != NO:
@@ -111,5 +111,8 @@ is NO program do nothing and close. If answer is YES program ask for a file name
     
     
     print(GOODBYE)
+    
+    
+    
     
 main()
