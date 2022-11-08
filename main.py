@@ -63,7 +63,7 @@ def main():
    '''
 
     if answer == YES:
-        list_SMILES = SMILES_from_file_io()
+        list_smiles = smiles_from_file_io()
         if list_SMILES.list_SMILES == []:
             print(LIST_IS_EMPTY)
     if answer == NO:
