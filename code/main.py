@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -125,5 +126,3 @@ def main():
         smiles_to_file_io(smiles_strings_list)
 
     print(GOODBYE)
-
-main()

@@ -1,3 +1,4 @@
+
 from smiles_string_class import SmilesString
 from smiles_strings_list_class import SmilesStringsList
 
@@ -17,4 +18,3 @@ def input_new_io(list_smiles):
         print(SMILES_INSERTED)
     else:
         print(SMILES_INVALID)
-
