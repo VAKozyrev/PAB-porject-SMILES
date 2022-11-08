@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -10,45 +9,8 @@ Created on Mon Nov  7 21:35:42 2022
 import funcs as f
 from smiles_string_class import SmilesString
 from smiles_strings_list_class import SmilesStringsList
+import constants as c
 
-''' 
-    What is SmilesString and SmilesStringsList:
-
-    class SmilesString:
-        def __init__(self, smiles_string):              smiles_string = str
-            self.smiles = smiles_string
-
-    class SmilesStringsList:
-        def __init__(self, smiles_strings_list):        smiles_strings_list = [SMILES]
-            self.list_smiles = smiles_strings_list
-'''
-
-# COMMANDS#
-COUNT_SUBSTRINGS = 'C'
-MOLECULAR_FORMULA = 'M'
-DISSIMILARITY = 'D'
-INPUT_NEW_SMILES = 'I'
-HELP = 'H'
-QUIT = 'Q'
-NO = 'N'
-YES = 'Y'
-
-# INTERACTIONS#
-LOAD_SOURSE = 'Load input from file (Y/N)?'
-INPUT_COMMAND = 'Input command to execute:'
-INPUT_SOURSE = 'Input source (F/T)'
-INPUT_FILE_NAME = 'Input file name: '
-SAVE_SMILES = 'Save SMILES list to file (Y/N)?'
-GOODBYE = 'Goodbye!'
-LIST_IS_EMPTY = 'SMILES list empty'
-HELP_MESSAGE = 'Help Message'
-
-# ERRORS#
-FAILED_READING = 'Failed reading file '
-INVALID_ANSWER = 'Answer invalid'
-LIST_EMPTY = 'SMILES list empty'
-INVALID_COMMAND = 'Command invalid'
-SMILES_INVALID = 'SMILES invalid'
 
 
 def main():
@@ -58,12 +20,12 @@ def main():
     nothing and print list of all commands. If answer is YES program ask for
     file name.
     """
-    list_smiles = SmilesStringsList([])
-    answer = input(LOAD_SOURSE)
-    while answer != YES and answer != NO:
-        print(INVALID_ANSWER)
-        answer = input(LOAD_SOURSE)
+    #list_smiles = SmilesStringsList([])
 
+    answer = input(c.LOAD_SOURSE)
+    while answer != c.YES and answer != c.NO:
+        print(c.INVALID_ANSWER)
+        answer = input(c.LOAD_SOURSE)
 
     """ 
     smiles_from_file_io(): function which ask user to enter name of file 
@@ -72,33 +34,34 @@ def main():
     valid SMILES from the file.
     """
 
-    if answer == YES:
-        smiles_strings_list = smiles_from_file_io()
+    if answer == c.YES:
+        smiles_strings_list = f.smiles_from_file_io()
         if smiles_strings_list == []:
-            print(LIST_IS_EMPTY)
-    if answer == NO:
+            print(c.LIST_IS_EMPTY)
+    if answer == c.NO:
         smiles_strings_list = SmilesStringsList([])
 
     """
     Second step, program print list of all commands
     """
 
-    print(HELP_MESSAGE)
+    print(c.HELP_MESSAGE)
 
     """
     Third step, main loop with all commands.
     """
 
     command = input()
-    while command.upper() != QUIT:
+    while command.upper() != c.QUIT:
 
         #if command == COUNT_SUBSTRINGS:
 
-        #if command == MOLECULAR_FORMULA:
+        if command == c.MOLECULAR_FORMULA:
+            f.obtain_molecular_formula(smiles_strings_list)
 
         #if command == DISSIMILARITY:
 
-        if command == INPUT_NEW_SMILES:
+        if command == c.INPUT_NEW_SMILES:
             f.input_new_io(list_smiles)
         #if command == HELP:
             #print(HELP_MESSAGE)
@@ -110,10 +73,10 @@ def main():
     is NO program do nothing and close. If answer is YES program ask for a file name. 
     """
 
-    answer = input(SAVE_SMILES)
-    while answer != YES and answer != NO:
-        print(INVALID_ANSWER)
-        answer = input(SAVE_SMILES)
+    answer = input(c.SAVE_SMILES)
+    while answer != c.YES and answer != c.NO:
+        print(c.INVALID_ANSWER)
+        answer = input(c.SAVE_SMILES)
 
     """
     smiles_to_file_io(smiles_strings_list): function that asks user for file name, if program 
@@ -122,7 +85,7 @@ def main():
     in the file. 
     """
 
-    if answer == YES:
+    if answer == c.YES:
         smiles_to_file_io(smiles_strings_list)
 
-    print(GOODBYE)
+    print(c.GOODBYE)
