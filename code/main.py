@@ -35,8 +35,7 @@ def main():
     """
 
     if answer == c.YES:
-        f.open_file()
-        smiles_strings_list = smiles_from_file_io()
+        smiles_strings_list = f.smiles_from_file_io()
         if smiles_strings_list == []:
             print(c.LIST_IS_EMPTY)
     if answer == c.NO:
@@ -58,7 +57,7 @@ def main():
         #if command == COUNT_SUBSTRINGS:
 
         if command == c.MOLECULAR_FORMULA:
-            obtain_molecular_formula
+            f.obtain_molecular_formula(smiles_strings_list)
 
         #if command == DISSIMILARITY:
 

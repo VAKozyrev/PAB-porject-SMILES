@@ -5,7 +5,14 @@ import constants as c
 
 
 
-#def smiles_from_file_io():
+def smiles_from_file_io():
+    file_name = str(input(">"))
+    try:
+        with open("file_name", "r") as file_handle:
+            smiles_strings_list = file_handle.read()
+            return (smiles_strings_list)
+    except:
+        print(c.FAILED_READING)
 
 
 #def smiles_to_file_io():
@@ -20,14 +27,6 @@ def input_new_io(list_smiles):
         print(c.SMILES_INVALID)
 
 
-#def obtain_molecular_formula():
+def obtain_molecular_formula(smiles_strings_list):
+    return True
 
-
-
-def open_file():
-    file_name = str(input(">"))
-    try:
-        with open("file_name", "r") as file_handle:
-            smiles_strings_list = file_handle.read()
-    except:
-        print(c.FAILED_READING)
