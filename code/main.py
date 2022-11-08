@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -5,6 +6,10 @@ Created on Mon Nov  7 21:35:42 2022
 
 @author: mac
 """
+
+import funcs as f
+from smiles_string_class import SmilesString
+from smiles_strings_list_class import SmilesStringsList
 
 ''' 
     What is SmilesString and SmilesStringsList:
@@ -36,9 +41,7 @@ INPUT_FILE_NAME = 'Input file name: '
 SAVE_SMILES = 'Save SMILES list to file (Y/N)?'
 GOODBYE = 'Goodbye!'
 LIST_IS_EMPTY = 'SMILES list empty'
-f = open('helpmessage.txt', 'r', encoding="utf-8")
-HELP_MESSAGE = f.read()
-f.close()
+HELP_MESSAGE = 'Help Message'
 
 # ERRORS#
 FAILED_READING = 'Failed reading file '
@@ -55,7 +58,7 @@ def main():
     nothing and print list of all commands. If answer is YES program ask for
     file name.
     """
-
+    list_smiles = SmilesStringsList([])
     answer = input(LOAD_SOURSE)
     while answer != YES and answer != NO:
         print(INVALID_ANSWER)
@@ -89,16 +92,16 @@ def main():
     command = input()
     while command.upper() != QUIT:
 
-        if command == COUNT_SUBSTRINGS:
+        #if command == COUNT_SUBSTRINGS:
 
-        if command == MOLECULAR_FORMULA:
+        #if command == MOLECULAR_FORMULA:
 
-        if command == DISSIMILARITY:
+        #if command == DISSIMILARITY:
 
         if command == INPUT_NEW_SMILES:
-
-        if command == HELP:
-            print(HELP_MESSAGE)
+            f.input_new_io(list_smiles)
+        #if command == HELP:
+            #print(HELP_MESSAGE)
 
         command = input()
 
@@ -123,5 +126,3 @@ def main():
         smiles_to_file_io(smiles_strings_list)
 
     print(GOODBYE)
-
-main()
