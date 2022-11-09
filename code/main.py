@@ -44,10 +44,10 @@ def main():
         #if command == COUNT_SUBSTRINGS:
 
         if command == c.MOLECULAR_FORMULA:
-        #    if smiles_list == []:
-        #        print(c.LIST_IS_EMPTY)
-        #    else:
-            f.obtain_molecular_formula(smiles_list)
+            if smiles_list == []:
+                print(c.LIST_IS_EMPTY)
+            else:
+                f.obtain_molecular_formula(smiles_list)
 
         #if command == DISSIMILARITY:
 
@@ -73,6 +73,6 @@ def main():
             if answer == c.YES:
                 f.write_to_file(smiles_list)
 
-            print(c.GOODBYE)
+    print(c.GOODBYE)
 
 main()
