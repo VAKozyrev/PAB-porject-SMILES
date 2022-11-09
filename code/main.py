@@ -7,87 +7,90 @@ Created on Mon Nov  7 21:35:42 2022
 """
 
 import funcs as f
+import constants as c
 from smiles_string_class import SmilesString
 from smiles_strings_list_class import SmilesStringsList
-import constants as c
 
 
 
 def main():
-    """
-    Firs step: program asks if you want to load SMILES strings from file or
-    not. Repeat question until answer != Y or N. If answer is NO program do
-    nothing and print list of all commands. If answer is YES program ask for
-    file name.
-    """
-    #list_smiles = SmilesStringsList([])
 
-    answer = input(c.LOAD_SOURSE)
+    answer = f.read_command(c.LOAD_SOURSE)
     while answer != c.YES and answer != c.NO:
         print(c.INVALID_ANSWER)
-        answer = input(c.LOAD_SOURSE)
-
-    """ 
-    smiles_from_file_io(): function which ask user to enter name of file 
-    for reading, if file can't be read print 'Failed reading file + 'file name'
-    else: read only valid SMILES and return object smiles_strings_list with 
-    valid SMILES from the file.
-    """
+        answer = f.read_command(c.LOAD_SOURSE)
 
     if answer == c.YES:
-        smiles_strings_list = f.smiles_from_file_io()
-        if smiles_strings_list == []:
-            print(c.LIST_IS_EMPTY)
+        file_name = f.read_command(c.PROMPT)
+        if f.open_file(file_name):
+            smiles_list = f.read_from_file(file_name)
+            if smiles_list.smiles_list == []:
+                print(c.LIST_IS_EMPTY)
+            else:
+                for smiles in smiles_list.smiles_list:
+                    print(smiles)
+        else:
+            print(c.FAILED_READING + str(file_name))
+
     if answer == c.NO:
-        smiles_strings_list = SmilesStringsList([])
+        smiles_list = SmilesStringsList([])
 
-    """
-    Second step, program print list of all commands
-    """
 
-    print(c.HELP_MESSAGE)
+    f.print_help_message()
 
-    """
-    Third step, main loop with all commands.
-    """
+    command = f.read_command(c.PROMPT)
 
-    command = input()
     while command.upper() != c.QUIT:
 
-        #if command == COUNT_SUBSTRINGS:
+        if command == c.COUNT_SUBSTRINGS:
+            answer = f.read_command(c.INPUT_SOURSE)
+            while answer != c.FILE and answer != c.TERMINAL:
+                print(c.INVALID_INPUT)
+                answer = f.read_command(c.INPUT_SOURSE)
 
-        if command == c.MOLECULAR_FORMULA:
-            f.obtain_molecular_formula(smiles_strings_list)
+            if answer == c.FILE:
+                file_name = f.read_command(c.PROMPT)
+                if f.open_file(file_name):
+                    substrings_list = f.read_substrings_from_file(file_name)
+                    if substrings_list == []:
+                        print(c.LIST_IS_EMPTY)
+                    #else:
+                    #    for smiles in smiles_list.smiles_list:
+                    #        print(smiles)
+                else:
+                    print(c.FAILED_READING + str(file_name))
+
+        elif command == c.MOLECULAR_FORMULA:
+            if smiles_list == []:
+                print(c.LIST_IS_EMPTY)
+            else:
+                f.obtain_molecular_formula(smiles_list)
 
         #if command == DISSIMILARITY:
 
-        if command == c.INPUT:
-            f.input_new_io(smiles_strings_list)
-        #if command == HELP:
-            #print(HELP_MESSAGE)
+        elif command == c.INPUT:
+            f.input_new_smiles(smiles_list)
 
-        command = input()
+        #elif command ==
 
-    """
-    Forth step, program ask if you want to save SMILES to file or not. If answer
-    is NO program do nothing and close. If answer is YES program ask for a file name. 
-    """
+        elif command == c.HELP:
+            f.print_help_message()
 
-    answer = input(c.SAVE_SMILES)
-    while answer != c.YES and answer != c.NO:
-        print(c.INVALID_ANSWER)
-        answer = input(c.SAVE_SMILES)
-    if answer == c.YES:
-        f.smiles_to_file_io(smiles_strings_list)
+        else:
+            print(c.INVALID_COMMAND)
 
+        command = f.read_command(c.PROMPT)
 
-    """
-    smiles_to_file_io(smiles_strings_list): function that asks user for file name, if program 
-    can't open the file, print 'Failed open file + 'file name'. Else, program 
-    write SMILES from smiles_strings_list to the file, if that SMILES is not already 
-    in the file. 
-    """
+    if command == c.QUIT:
+        answer = f.read_command(c.SAVE_SMILES)
+        while answer != c.YES and answer != c.NO:
+            print(c.INVALID_ANSWER)
+            answer = f.read_command(c.SAVE_SMILES)
 
-    print(c.GOODBYE)
+        if answer == c.YES:
+            f.write_to_file(smiles_list)
+            print(c.GOODBYE)
+
+        print(c.GOODBYE)
 
 main()
