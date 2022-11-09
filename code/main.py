@@ -56,8 +56,11 @@ def main():
                     if substrings_list == []:
                         print(c.LIST_IS_EMPTY)
                     #else:
+                    #   func_name
                 else:
                     print(c.FAILED_READING + str(file_name))
+
+            if answer == c.TERMINAL:
 
         elif command == c.MOLECULAR_FORMULA:
             if smiles_list == []:
