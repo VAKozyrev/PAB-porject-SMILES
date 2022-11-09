@@ -28,16 +28,20 @@ def open_file(file_name):
         return False
 
 
-def read_from_file(file_name):
+def validate_smiles(smiles_list):
     validated_smiles = []
-    with open(str(file_name), 'r') as file_handle:
-        all_strings_list = file_handle.readlines()[1:] # read from 2nd line
-        for i in all_strings_list:
-            smiles = SmilesString(i)
-            if smiles.validate():
-                validated_smiles.append(smiles)
-        smiles_list = SmilesStringsList(validated_smiles.sort())
-        return smiles_list
+    for i in smiles_list:
+        smiles = SmilesString(i)
+        if smiles.validate():
+            validated_smiles.append(smiles)
+    smiles_list_class = SmilesStringsList(validated_smiles.sort())
+    return smiles_list_class
+
+
+def read_from_file(file_name, string_from):
+    file_handle = open(str(file_name), 'r')
+    all_strings_list = file_handle.readlines()[string_from:] # read from 2nd line
+    return all_strings_list
 
 
 def read_substrings_from_file(file_name):

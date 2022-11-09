@@ -23,7 +23,8 @@ def main():
     if answer == c.YES:
         file_name = f.read_command(c.PROMPT)
         if f.open_file(file_name):
-            smiles_list = f.read_from_file(file_name)
+            smiles_items = f.read_from_file(file_name, 1)
+            smiles_list = f.validate_smiles(smiles_items)
             if smiles_list.smiles_list == []:
                 print(c.LIST_IS_EMPTY)
             else:
