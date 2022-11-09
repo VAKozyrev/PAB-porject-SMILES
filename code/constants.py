@@ -17,6 +17,7 @@ SAVE_SMILES = 'Save SMILES list to file (Y/N)?'
 GOODBYE = 'Goodbye!'
 LIST_IS_EMPTY = 'SMILES list empty'
 HELP_MESSAGE = 'Help Message'
+PROMPT = '>'
 
 #ERRORS
 FAILED_READING = 'Failed reading file '
