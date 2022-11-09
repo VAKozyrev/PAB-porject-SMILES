@@ -15,10 +15,10 @@ from smiles_strings_list_class import SmilesStringsList
 
 def main():
 
-    answer = f.read_command(c.LOAD_SOURSE)
+    answer = f.read_command(c.LOAD_SOURCE)
     while answer != c.YES and answer != c.NO:
         print(c.INVALID_ANSWER)
-        answer = f.read_command(c.LOAD_SOURSE)
+        answer = f.read_command(c.LOAD_SOURCE)
 
     if answer == c.YES:
         file_name = f.read_command(c.PROMPT)
@@ -43,10 +43,10 @@ def main():
     while command.upper() != c.QUIT:
 
         if command == c.COUNT_SUBSTRINGS:
-            answer = f.read_command(c.INPUT_SOURSE)
+            answer = f.read_command(c.INPUT_SOURCE)
             while answer != c.FILE and answer != c.TERMINAL:
                 print(c.INVALID_INPUT)
-                answer = f.read_command(c.INPUT_SOURSE)
+                answer = f.read_command(c.INPUT_SOURCE)
 
             if answer == c.FILE:
                 file_name = f.read_command(c.PROMPT)
