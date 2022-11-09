@@ -27,6 +27,7 @@ INVALID_COMMAND = 'Command invalid'
 SMILES_INVALID = 'String s is not a valid SMILES'
 SMILES_ALREADY_LOADED = 'SMILES s already loaded'
 SMILES_INSERTED  = 'SMILES list updated: s inserted'
+INVALID_INPUT = 'Input invalid'
 
 #Functions
 INPUT_NEW_SMILES = 'Enter new smiles '

@@ -35,15 +35,31 @@ def main():
     if answer == c.NO:
         smiles_list = SmilesStringsList([])
 
-    print(c.HELP_MESSAGE)
+    f.print_help_message()
 
     command = f.read_command(c.PROMPT)
 
     while command.upper() != c.QUIT:
 
-        #if command == COUNT_SUBSTRINGS:
+        if command == c.COUNT_SUBSTRINGS:
+            answer = f.read_command(c.INPUT_SOURSE)
+            while answer != c.FILE and answer != c.TERMINAL:
+                print(c.INVALID_INPUT)
+                answer = f.read_command(c.INPUT_SOURSE)
 
-        if command == c.MOLECULAR_FORMULA:
+            if answer == c.FILE:
+                file_name = f.read_command(c.PROMPT)
+                if f.open_file(file_name):
+                    substrings_list = f.read_substrings_from_file(file_name)
+                    if substrings_list == []:
+                        print(c.LIST_IS_EMPTY)
+                    #else:
+                    #    for smiles in smiles_list.smiles_list:
+                    #        print(smiles)
+                else:
+                    print(c.FAILED_READING + str(file_name))
+
+        elif command == c.MOLECULAR_FORMULA:
             if smiles_list == []:
                 print(c.LIST_IS_EMPTY)
             else:
@@ -56,23 +72,24 @@ def main():
 
         #elif command ==
 
-        #if command == HELP:
-            #print(HELP_MESSAGE)
+        elif command == c.HELP:
+            f.print_help_message()
 
         else:
             print(c.INVALID_COMMAND)
 
         command = f.read_command(c.PROMPT)
 
-        if command == c.QUIT:
+    if command == c.QUIT:
+        answer = f.read_command(c.SAVE_SMILES)
+        while answer != c.YES and answer != c.NO:
+            print(c.INVALID_ANSWER)
             answer = f.read_command(c.SAVE_SMILES)
-            while answer != c.YES and answer != c.NO:
-                print(c.INVALID_ANSWER)
-                answer = f.read_command(c.SAVE_SMILES)
 
-            if answer == c.YES:
-                f.write_to_file(smiles_list)
+        if answer == c.YES:
+            f.write_to_file(smiles_list)
+            print(c.GOODBYE)
 
-    print(c.GOODBYE)
+        print(c.GOODBYE)
 
 main()
