@@ -23,12 +23,12 @@ def main():
     if answer == c.YES:
         file_name = f.read_command(c.PROMPT)
         if f.open_file(file_name):
-            smiles_strings_list = f.read_from_file(file_name)
-            if smiles_strings_list == []:
+            smiles_list = f.read_from_file(file_name)
+            if smiles_list.smiles_list == []:
                 print(c.LIST_IS_EMPTY)
             else:
-                smiles_list = SmilesStringsList(smiles_strings_list)
-                # (Я не понял что дальше) if no string in the file was validated, or prints the valid ones in lexicographic order, one per line.
+                for smiles in smiles_list.smiles_list:
+                    print(smiles)
         else:
             print(c.FAILED_READING + str(file_name))
 
@@ -50,7 +50,7 @@ def main():
 
             #if command == DISSIMILARITY:
 
-            elif command == c.INPUT_NEW_SMILES:
+            elif command == c.INPUT:
                 f.input_new_smiles(smiles_list)
 
             #elif command ==
@@ -72,7 +72,6 @@ def main():
                 if answer == c.YES:
                     f.write_to_file(smiles_list)
 
-                if answer == c.NO:
-                    print(c.GOODBYE)
+                print(c.GOODBYE)
 
 main()

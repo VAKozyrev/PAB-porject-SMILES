@@ -2,7 +2,7 @@
 COUNT_SUBSTRINGS = 'C'
 MOLECULAR_FORMULA = 'M'
 DISSIMILARITY = 'D'
-INPUT_NEW_SMILES = 'I'
+INPUT = 'I'
 HELP = 'H'
 QUIT = 'Q'
 NO = 'N'
@@ -29,4 +29,4 @@ SMILES_ALREADY_LOADED = 'SMILES s already loaded'
 SMILES_INSERTED  = 'SMILES list updated: s inserted'
 
 #Functions
-#INPUT_NEW_SMILES = 'Enter new smiles '
+INPUT_NEW_SMILES = 'Enter new smiles '

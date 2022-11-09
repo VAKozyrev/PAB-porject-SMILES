@@ -17,9 +17,15 @@ def open_file(file_name):
 
 
 def read_from_file(file_name):
+    validated_smiles = []
     with open(str(file_name), 'r') as file_handle:
-        smiles_strings_list = file_handle.readlines()[1:] # read from 2nd line
-        return smiles_strings_list
+        all_strings_list = file_handle.readlines()[1:] # read from 2nd line
+        for i in all_strings_list:
+            smiles = SmilesString(i)
+            if smiles.validate():
+                validated_smiles.append(smiles)
+        smiles_list = SmilesStringsList(validated_smiles.sort())
+        return smiles_list
 
 
 def write_to_file(smiles_list):
