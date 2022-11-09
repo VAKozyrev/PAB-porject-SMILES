@@ -9,9 +9,9 @@ NO = 'N'
 YES = 'Y'
 
 #INTERACTIONS
-LOAD_SOURSE = 'Load input from file (Y/N)?'
+LOAD_SOURCE = 'Load input from file (Y/N)?'
 INPUT_COMMAND = 'Input command to execute:'
-INPUT_SOURSE = 'Input source (F/T)'
+INPUT_SOURCE = 'Input source (F/T)'
 INPUT_FILE_NAME = 'Input file name: '
 SAVE_SMILES = 'Save SMILES list to file (Y/N)?'
 GOODBYE = 'Goodbye!'

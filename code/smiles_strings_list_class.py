@@ -42,6 +42,7 @@ class SmilesStringsList:
     def __init__(self, smiles_strings_list):
         self.smiles_list = smiles_strings_list
 
+
     def add_smiles_string(self, smiles_string):
         self.smiles_list.append(smiles_string)
 
@@ -58,3 +59,10 @@ class SmilesStringsList:
                     occurences += count_occurances(k,j)
                 res += ' substring ' + j + ' occurs ' + str(occurences)
             print(res)
+
+    def add_smiles_string(self, smiles_string):
+        self.smiles_list.append(smiles_string)
+
+    def get_smiles_string(self, elem):
+        return self.smiles_list[elem]
+
