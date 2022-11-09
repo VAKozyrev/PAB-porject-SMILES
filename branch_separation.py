@@ -49,11 +49,25 @@ def get_all_sequences(main_sequence, branches):
     return all_sequences, main_sequence
 
 
+def get_all_sequences_second_version(main_sequence, branches):
+    all_sequences = [clear_sequence(main_sequence)]
+    for i in range(len(branches)-1,-1,-1):
+        number_of_signs = get_number_of_sings(branches[i],'!')
+        counter = number_of_signs * '!'
+        was_found = False
+        for j in range(len(main_sequence)-1,-1,-1):
+            if main_sequence[j-number_of_signs:j] == counter and not was_found:
+                sequence = main_sequence[:j-number_of_signs] + branches[i][number_of_signs:]
+                main_sequence = main_sequence[:j-number_of_signs] + branches[i][number_of_signs:] + main_sequence[j:]
+                all_sequences.append(clear_sequence(sequence))
+                was_found = True
+    return all_sequences, main_sequence
+
 def main():
 
     smiles_string = 'CC(=O)NC(C)CC1=CNc2c1cc(OCC(ON)C)cc2'
     main_sequence, branches = separate_branches(smiles_string)
-    all_sequences, res = get_all_sequences(main_sequence, branches)
+    all_sequences, res = get_all_sequences_second_version(main_sequence, branches)
     print(smiles_string)
     print(res)
     print(branches)
