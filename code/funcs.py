@@ -20,14 +20,6 @@ def read_command(text):
     return command
 
 
-def open_file(file_name):
-    try:
-        with open(str(file_name), 'r') as file_handle:
-            return True
-    except:
-        return False
-
-
 def validate_smiles(smiles_list):
     validated_smiles = []
     for i in smiles_list:
@@ -38,17 +30,19 @@ def validate_smiles(smiles_list):
     return smiles_list_class
 
 
+def open_file(file_name):
+    try:
+        with open(str(file_name), 'r') as file_handle:
+            return True
+    except:
+        return False
+
+
 def read_from_file(file_name, string_from):
     file_handle = open(str(file_name), 'r')
     all_strings_list = file_handle.readlines()[string_from:] # read from 2nd line
+    file_handle.close()
     return all_strings_list
-
-
-def read_substrings_from_file(file_name):
-    file_name = read_command(c.PROMPT)
-    with open(str(file_name), 'r') as file_handle:
-        substring_list = file_handle.read()
-        return substring_list
 
 
 def write_to_file(smiles_list):
@@ -57,7 +51,6 @@ def write_to_file(smiles_list):
     for i in smiles_list.smiles_list:
         f.write(i.smiles + '\n')
     f.close()
-
 
 
 def input_new_smiles(smiles_list):
@@ -75,8 +68,8 @@ def input_new_smiles(smiles_list):
 
 
 def obtain_molecular_formula(smiles_list):
-    for elem in smiles_list:
-        smiles_string = smiles_list.get_smiles_string(elem)
+    for smiles in smiles_list:
+        smiles_string = smiles_list.get_smiles_string(smiles)
         molecular_formula = smiles_string.get_molecular_formula()
         result = smiles_string + " " + "is" + " " + molecular_formula
-        print(molecular_formula)
+        print(result)

@@ -52,12 +52,10 @@ def main():
             if answer == c.FILE:
                 file_name = f.read_command(c.PROMPT)
                 if f.open_file(file_name):
-                    substrings_list = f.read_substrings_from_file(file_name)
+                    substrings_list = f.read_from_file(file_name, 0)
                     if substrings_list == []:
                         print(c.LIST_IS_EMPTY)
                     #else:
-                    #    for smiles in smiles_list.smiles_list:
-                    #        print(smiles)
                 else:
                     print(c.FAILED_READING + str(file_name))
 
