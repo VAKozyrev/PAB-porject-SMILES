@@ -15,6 +15,7 @@ from smiles_strings_list_class import SmilesStringsList
 
 def main():
 
+
     answer = f.read_command(c.LOAD_SOURCE)
     while answer != c.YES and answer != c.NO:
         print(c.INVALID_ANSWER)
@@ -23,8 +24,10 @@ def main():
     if answer == c.YES:
         file_name = f.read_command(c.PROMPT)
         if f.open_file(file_name):
+
             smiles_items = f.read_from_file(file_name, 1)
             smiles_list = f.validate_smiles(smiles_items)
+            
             if smiles_list.smiles_list == []:
                 print(c.LIST_IS_EMPTY)
             else:
@@ -44,14 +47,43 @@ def main():
     while command.upper() != c.QUIT:
 
         if command == c.COUNT_SUBSTRINGS:
-            answer = f.read_command(c.INPUT_SOURCE)
-            while answer != c.FILE and answer != c.TERMINAL:
-                print(c.INVALID_INPUT)
-                answer = f.read_command(c.INPUT_SOURCE)
+
+            f.count_occurences_io(smiles_list)
+
 
             if answer == c.FILE:
                 file_name = f.read_command(c.PROMPT)
                 if f.open_file(file_name):
+
+                    substrings_list = f.read_substrings_from_file(file_name)
+                    if substrings_list == []:
+                        print(c.LIST_IS_EMPTY)
+                    #else:
+                    #    for smiles in smiles_list.smiles_list:
+                    #        print(smiles)
+                else:
+                    print(c.FAILED_READING + str(file_name))
+
+        elif command == c.MOLECULAR_FORMULA:
+            if smiles_list == []:
+                print(c.LIST_IS_EMPTY)
+            else:
+                f.obtain_molecular_formula(smiles_list)
+
+        if command == c.DISSIMILARITY:
+            f.count_dissimilarity_io()
+
+        elif command == c.INPUT:
+            f.input_new_smiles(smiles_list)
+
+        #elif command ==
+
+        elif command == c.HELP:
+            f.print_help_message()
+
+        else:
+            print(c.INVALID_COMMAND)
+
                     substrings_list = f.read_from_file(file_name, 0)
                     if substrings_list == []:
                         print(c.LIST_IS_EMPTY)
