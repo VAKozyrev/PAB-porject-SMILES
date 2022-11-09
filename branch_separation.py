@@ -63,16 +63,22 @@ def get_all_sequences_second_version(main_sequence, branches):
                 was_found = True
     return all_sequences, main_sequence
 
+
+
 def main():
 
     smiles_string = 'CC(=O)NC(C)CC1=CNc2c1cc(OCC(ON)C)cc2'
     main_sequence, branches = separate_branches(smiles_string)
     all_sequences, res = get_all_sequences_second_version(main_sequence, branches)
     print(smiles_string)
-    print(res)
+
     print(branches)
     print(main_sequence)
+    print(res)
+    sequences, a = get_all_sequences(main_sequence, branches)
+    print(sequences)
     print(all_sequences)
+
 
 
 main()
