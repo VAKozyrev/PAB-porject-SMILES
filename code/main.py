@@ -35,6 +35,7 @@ def main():
     if answer == c.NO:
         smiles_list = SmilesStringsList([])
 
+
     f.print_help_message()
 
     command = f.read_command(c.PROMPT)

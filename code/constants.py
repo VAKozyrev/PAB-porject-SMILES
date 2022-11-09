@@ -18,6 +18,8 @@ GOODBYE = 'Goodbye!'
 LIST_IS_EMPTY = 'SMILES list empty'
 HELP_MESSAGE = 'Help Message'
 PROMPT = '>'
+FILE = 'F'
+TERMINAL = 'T'
 
 #ERRORS
 FAILED_READING = 'Failed reading file '
