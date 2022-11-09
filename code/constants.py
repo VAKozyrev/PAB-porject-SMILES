@@ -2,7 +2,7 @@
 COUNT_SUBSTRINGS = 'C'
 MOLECULAR_FORMULA = 'M'
 DISSIMILARITY = 'D'
-INPUT_NEW_SMILES = 'I'
+INPUT = 'I'
 HELP = 'H'
 QUIT = 'Q'
 NO = 'N'
@@ -17,15 +17,16 @@ SAVE_SMILES = 'Save SMILES list to file (Y/N)?'
 GOODBYE = 'Goodbye!'
 LIST_IS_EMPTY = 'SMILES list empty'
 HELP_MESSAGE = 'Help Message'
+PROMPT = '>'
 
 #ERRORS
 FAILED_READING = 'Failed reading file '
 INVALID_ANSWER = 'Answer invalid'
 LIST_EMPTY = 'SMILES list empty'
 INVALID_COMMAND = 'Command invalid'
-SMILES_INVALID = 'SMILES invalid'
+SMILES_INVALID = 'String s is not a valid SMILES'
+SMILES_ALREADY_LOADED = 'SMILES s already loaded'
+SMILES_INSERTED  = 'SMILES list updated: s inserted'
 
 #Functions
 INPUT_NEW_SMILES = 'Enter new smiles '
-SMILES_INVALID   = 'SMILES invalid'
-SMILES_INSERTED  = 'SMILES Inserted'
