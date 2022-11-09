@@ -24,9 +24,9 @@ FAILED_READING = 'Failed reading file '
 INVALID_ANSWER = 'Answer invalid'
 LIST_EMPTY = 'SMILES list empty'
 INVALID_COMMAND = 'Command invalid'
-SMILES_INVALID = 'SMILES invalid'
+SMILES_INVALID = 'String s is not a valid SMILES'
+SMILES_ALREADY_LOADED = 'SMILES s already loaded'
+SMILES_INSERTED  = 'SMILES list updated: s inserted'
 
 #Functions
-INPUT_NEW_SMILES = 'Enter new smiles '
-SMILES_INVALID   = 'SMILES invalid'
-SMILES_INSERTED  = 'SMILES Inserted'
+#INPUT_NEW_SMILES = 'Enter new smiles '

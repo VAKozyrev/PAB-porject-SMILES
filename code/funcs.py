@@ -26,8 +26,12 @@ def input_new_smiles(smiles_list):
     string = read_command(c.INPUT_NEW_SMILES)
     smiles_string = SmilesString(string)
     if smiles_string.validate():
-        smiles_list.add_smiles_string(smiles_string)
-        print(c.SMILES_INSERTED)
+        if smiles_string not in smiles_list:
+            smiles_list.add_smiles_string(smiles_string)
+            print(c.SMILES_INSERTED)
+        else:
+            print(c.SMILES_ALREADY_LOADED)
+
     else:
         print(c.SMILES_INVALID)
 

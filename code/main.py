@@ -50,6 +50,8 @@ def main():
             elif command == c.INPUT_NEW_SMILES:
                 f.input_new_smiles(smiles_list)
 
+            #elif command ==
+
             #if command == HELP:
                 #print(HELP_MESSAGE)
 
@@ -58,16 +60,16 @@ def main():
 
             command = f.read_command(c.PROMPT)
 
+            if command == c.QUIT:
+                answer = f.read_command(c.SAVE_SMILES)
+                while answer != c.YES and answer != c.NO:
+                    print(c.INVALID_ANSWER)
+                    answer = f.read_command(c.SAVE_SMILES)
 
-        answer = input(c.SAVE_SMILES)
-        while answer != c.YES and answer != c.NO:
-            print(c.INVALID_ANSWER)
-            answer = input(c.SAVE_SMILES)
+                if answer == c.YES:
+                    #smiles_to_file_io(smiles_strings_list)
 
-
-        if answer == c.YES:
-            smiles_to_file_io(smiles_strings_list)
-
-        print(c.GOODBYE)
+                if answer == c.NO:
+                    print(c.GOODBYE)
 
 main()
