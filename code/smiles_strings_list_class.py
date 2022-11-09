@@ -14,3 +14,6 @@ class SmilesStringsList:
 
     def add_smiles_string(self, smiles_string):
         self.smiles_list.append(smiles_string)
+
+    def get_smiles_string(self, elem):
+        return self.smiles_list[elem]

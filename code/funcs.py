@@ -18,7 +18,7 @@ def open_file(file_name):
 
 def read_from_file(file_name):
     with open(str(file_name), 'r') as file_handle:
-        smiles_strings_list = file_handle.read()
+        smiles_strings_list = file_handle.readlines()[1:] # read from 2nd line
         return smiles_strings_list
 
 
@@ -46,4 +46,8 @@ def input_new_smiles(smiles_list):
 
 
 def obtain_molecular_formula(smiles_list):
-    return True
+    for elem in smiles_list:
+        smiles_string = smiles_list.get_smiles_string(elem)
+        molecular_formula = smiles_string.get_molecular_formula()
+        result = smiles_string + " " + "is" + " " + molecular_formula
+        print(molecular_formula)
