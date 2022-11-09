@@ -28,6 +28,13 @@ def read_from_file(file_name):
         return smiles_list
 
 
+def read_substrings_from_file(file_name):
+    file_name = read_command(c.PROMPT)
+    with open(str(file_name), 'r') as file_handle:
+        substring_list = file_handle.read()
+        return substring_list
+
+
 def write_to_file(smiles_list):
     file_name = read_command(c.INPUT_FILE_NAME)
     f = open(str(file_name), 'w')
