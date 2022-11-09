@@ -61,8 +61,8 @@ def main():
 
         #if command == DISSIMILARITY:
 
-        if command == c.INPUT_NEW_SMILES:
-            f.input_new_io(list_smiles)
+        if command == c.INPUT:
+            f.input_new_io(smiles_strings_list)
         #if command == HELP:
             #print(HELP_MESSAGE)
 
@@ -77,6 +77,9 @@ def main():
     while answer != c.YES and answer != c.NO:
         print(c.INVALID_ANSWER)
         answer = input(c.SAVE_SMILES)
+    if answer == c.YES:
+        f.smiles_to_file_io(smiles_strings_list)
+
 
     """
     smiles_to_file_io(smiles_strings_list): function that asks user for file name, if program 
@@ -85,7 +88,6 @@ def main():
     in the file. 
     """
 
-    if answer == c.YES:
-        smiles_to_file_io(smiles_strings_list)
-
     print(c.GOODBYE)
+
+main()

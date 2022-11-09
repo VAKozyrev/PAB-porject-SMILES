@@ -15,7 +15,12 @@ def smiles_from_file_io():
         print(c.FAILED_READING)
 
 
-#def smiles_to_file_io():
+def smiles_to_file_io(list_smiles):
+    file_name = input(c.INPUT_FILE_NAME)
+    f = open(file_name, 'w')
+    for i in list_smiles.list_smiles:
+        f.write(i.smiles + '\n')
+    f.close()
 
 def input_new_io(list_smiles):
     s = input(c.INPUT_NEW_SMILES)
@@ -29,4 +34,5 @@ def input_new_io(list_smiles):
 
 def obtain_molecular_formula(smiles_strings_list):
     return True
+
 
