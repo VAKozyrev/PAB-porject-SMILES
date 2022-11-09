@@ -67,7 +67,7 @@ def main():
                     answer = f.read_command(c.SAVE_SMILES)
 
                 if answer == c.YES:
-                    #smiles_to_file_io(smiles_strings_list)
+                    f.write_to_file(smiles_list)
 
                 if answer == c.NO:
                     print(c.GOODBYE)

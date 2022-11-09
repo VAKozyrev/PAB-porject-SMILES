@@ -22,6 +22,15 @@ def read_from_file(file_name):
         return smiles_strings_list
 
 
+def write_to_file(smiles_list):
+    file_name = read_command(c.INPUT_FILE_NAME)
+    f = open(str(file_name), 'w')
+    for i in smiles_list.smiles_list:
+        f.write(i.smiles + '\n')
+    f.close()
+
+
+
 def input_new_smiles(smiles_list):
     string = read_command(c.INPUT_NEW_SMILES)
     smiles_string = SmilesString(string)
