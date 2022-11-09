@@ -45,6 +45,14 @@ def read_from_file(file_name, string_from):
     return all_strings_list
 
 
+def read_from_terminal(num_of_strings):
+    substrings_list = []
+    while num_of_strings > 0:
+        smiles = read_command(c.PROMPT)
+        substrings_list.append(smiles)
+    return substrings_list
+
+
 def write_to_file(smiles_list):
     file_name = read_command(c.INPUT_FILE_NAME)
     f = open(str(file_name), 'w')

@@ -61,6 +61,9 @@ def main():
                     print(c.FAILED_READING + str(file_name))
 
             if answer == c.TERMINAL:
+                num_of_strings = f.read_command(c.PROMPT)
+                substring_list = f.read_from_terminal(num_of_strings)
+                #func
 
         elif command == c.MOLECULAR_FORMULA:
             if smiles_list == []:
@@ -68,12 +71,11 @@ def main():
             else:
                 f.obtain_molecular_formula(smiles_list)
 
-        #if command == DISSIMILARITY:
+        #elif command == DISSIMILARITY:
 
         elif command == c.INPUT:
             f.input_new_smiles(smiles_list)
 
-        #elif command ==
 
         elif command == c.HELP:
             f.print_help_message()
