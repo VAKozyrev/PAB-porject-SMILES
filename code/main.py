@@ -43,10 +43,7 @@ def main():
     while command.upper() != c.QUIT:
 
         if command == c.COUNT_SUBSTRINGS:
-            answer = f.read_command(c.INPUT_SOURSE)
-            while answer != c.FILE and answer != c.TERMINAL:
-                print(c.INVALID_INPUT)
-                answer = f.read_command(c.INPUT_SOURSE)
+            f.count_occurences_io(smiles_list)
 
             if answer == c.FILE:
                 file_name = f.read_command(c.PROMPT)
@@ -66,7 +63,8 @@ def main():
             else:
                 f.obtain_molecular_formula(smiles_list)
 
-        #if command == DISSIMILARITY:
+        if command == c.DISSIMILARITY:
+            f.count_dissimilarity_io()
 
         elif command == c.INPUT:
             f.input_new_smiles(smiles_list)

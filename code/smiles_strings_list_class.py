@@ -58,7 +58,3 @@ class SmilesStringsList:
                     occurences += count_occurances(k,j)
                 res += ' substring ' + j + ' occurs ' + str(occurences)
             print(res)
-
-
-
-
