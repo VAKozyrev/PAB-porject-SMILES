@@ -2,7 +2,7 @@ from smiles_string_class import SmilesString
 from smiles_strings_list_class import SmilesStringsList
 import smiles_strings_list_class as s
 import constants as c
-
+import re
 
 
 def print_help_message():
@@ -70,6 +70,10 @@ def write_to_file(smiles_list):
 def input_new_smiles(smiles_list):
     string = input()
     string = string.upper()
+    regex = re.compile('(BR)')
+    string = regex.sub('Br', string)
+    regex = re.compile('(CL)')
+    string = regex.sub('Cl',string)
     smiles_string = SmilesString(string)
     l = smiles_list.get_list()
     if smiles_string.validate():

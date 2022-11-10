@@ -17,7 +17,7 @@ def clear_sequence(sequence):
 def separate_branches(smiles_string):
     branches_final = []
     main_sequence = smiles_string
-    regex = re.compile('[(][CNOBPFIScnos=\/\\@#0-9!]+[)]')
+    regex = re.compile('[(][CNOBPFISrlcnos=\/\\@#0-9!]+[)]')
     while '(' in main_sequence or ')' in main_sequence:
         branches_found = regex.findall(main_sequence)
         for i in branches_found:
