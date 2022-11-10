@@ -84,7 +84,8 @@ def input_new_smiles(smiles_list):
         else:
             res = 'SMILES ' + string + ' already loaded'
             print(res)
-
+    else:
+        print('String ' + string + ' is not a valid SMILES')
 
 def obtain_molecular_formula(smiles_list):
     for smiles in smiles_list:
