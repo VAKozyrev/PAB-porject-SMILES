@@ -16,24 +16,24 @@ from smiles_strings_list_class import SmilesStringsList
 def main():
 
     answer = f.read_command(c.LOAD_SOURCE)
-    while answer != c.YES and answer != c.NO:
+    while answer.upper() != c.YES and answer.upper() != c.NO:
         print(c.INVALID_ANSWER)
         answer = f.read_command(c.LOAD_SOURCE)
 
-    if answer == c.YES:
+    if answer.upper() == c.YES:
         file_name = f.read_command(c.PROMPT)
         if f.open_file(file_name):
-            smiles_items = f.read_from_file(file_name, 1)
+            smiles_items = f.read_from_file(file_name, 0)
             smiles_list = f.validate_smiles(smiles_items)
             if smiles_list.smiles_list == []:
                 print(c.LIST_IS_EMPTY)
             else:
                 for smiles in smiles_list.smiles_list:
-                    print(smiles)
+                    print(smiles.smiles)
         else:
             print(c.FAILED_READING + str(file_name))
 
-    if answer == c.NO:
+    if answer.upper() == c.NO:
         smiles_list = SmilesStringsList([])
 
 
@@ -44,12 +44,12 @@ def main():
     while command.upper() != c.QUIT:
 
 
-        if command == c.COUNT_SUBSTRINGS:
-            while answer != c.FILE and answer != c.TERMINAL:
+        if command.upper() == c.COUNT_SUBSTRINGS:
+            while answer.upper() != c.FILE and answer.upper() != c.TERMINAL:
                 print(c.INVALID_INPUT)
                 answer = f.read_command(c.INPUT_SOURCE)
 
-            if answer == c.FILE:
+            if answer.upper() == c.FILE:
                 file_name = f.read_command(c.PROMPT)
                 if f.open_file(file_name):
                     substrings_list = f.read_from_file(file_name, 0)
@@ -60,20 +60,20 @@ def main():
                 else:
                     print(c.FAILED_READING + str(file_name))
 
-            if answer == c.TERMINAL:
+            if answer.upper() == c.TERMINAL:
                 num_of_strings = f.read_command(c.PROMPT)
                 substring_list = f.read_from_terminal(num_of_strings)
                 smiles_list.cout_substrings(substring_list)
 
 
-        elif command == c.MOLECULAR_FORMULA:
+        elif command.upper() == c.MOLECULAR_FORMULA:
             if smiles_list.smiles_list == []:
                 print(c.LIST_IS_EMPTY)
             else:
                 f.obtain_molecular_formula(smiles_list)
 
 
-        elif command == c.DISSIMILARITY:
+        elif command.upper() == c.DISSIMILARITY:
             if smiles_list.smiles_list == [] or len(smiles_list.smiles_list) == 1:
                 print(c.LIST_EMPTY_OR_SINGULAR)
             elif len(smiles_list.smiles_list) > 1:
@@ -101,11 +101,11 @@ def main():
                 res += ':' + str(dissimilarity)
                 print(res)
 
-        elif command == c.INPUT:
+        elif command.upper() == c.INPUT:
             f.input_new_smiles(smiles_list)
 
 
-        elif command == c.HELP:
+        elif command.upper() == c.HELP:
             f.print_help_message()
 
         else:
@@ -113,15 +113,14 @@ def main():
 
         command = f.read_command(c.PROMPT)
 
-    if command == c.QUIT:
+    if command.upper() == c.QUIT:
         answer = f.read_command(c.SAVE_SMILES)
-        while answer != c.YES and answer != c.NO:
+        while answer.upper() != c.YES and answer.upper() != c.NO:
             print(c.INVALID_ANSWER)
             answer = f.read_command(c.SAVE_SMILES)
 
-        if answer == c.YES:
+        if answer.upper() == c.YES:
             f.write_to_file(smiles_list)
-            print(c.GOODBYE)
 
         print(c.GOODBYE)
 

@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b902ba1-94d7-447d-8b1e-ecdeff422a2c" name="Changes" comment="">
+    <list default="true" id="aa436b10-f40e-4fba-a953-aa879b14decd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/funcs.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/funcs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/smiles_strings_list_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/smiles_strings_list_class.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +52,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/code/main.py" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
-  <component name="RunManager" selected="Python.Python">
+  <component name="RunManager" selected="Python.main">
     <configuration name="Python" type="PythonConfigurationType" factoryName="Python">
       <module name="final" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -119,7 +122,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -138,10 +141,57 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1419" height="264" key="GridCell.Tab.0.bottom" timestamp="1668093956538">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="264" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1668093956538" />
+    <state width="1419" height="264" key="GridCell.Tab.0.center" timestamp="1668093956537">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="264" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1668093956537" />
+    <state width="1419" height="264" key="GridCell.Tab.0.left" timestamp="1668093956536">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="264" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1668093956536" />
+    <state width="1419" height="264" key="GridCell.Tab.0.right" timestamp="1668093956537">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="264" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1668093956537" />
+    <state width="1419" height="303" key="GridCell.Tab.1.bottom" timestamp="1668092835999">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="303" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1668092835999" />
+    <state width="1419" height="303" key="GridCell.Tab.1.center" timestamp="1668092835998">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="303" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1668092835998" />
+    <state width="1419" height="303" key="GridCell.Tab.1.left" timestamp="1668092835997">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="303" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1668092835997" />
+    <state width="1419" height="303" key="GridCell.Tab.1.right" timestamp="1668092835999">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="303" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1668092835999" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/code/main.py</url>
+          <line>24</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

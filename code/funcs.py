@@ -10,7 +10,9 @@ def print_help_message():
             'M: Count the number of times each atomic element occurs in the strings in the list and obtain the molecular formula (number of atoms of each element, e.g., C8NO2). The output of the command should appear in the terminal and be in lexicographic order.',
             'D: compare a given pair of molecules from their SMILES representation (calculate their dissim- ilarity, i.e., sum of squared differences between the number of occurrences of the sub-strings in two SMILES).',
             'S: select all SMILES strings in the list containing a given (set of) sub-structure(s). The set may be given by the user or read from a file (one substructure per line). The output of the command should appear in the terminal and be in lexicographic order.',
-            'I: input a new SMILES string to be added to the current list, if valid (if not, the application reports it found a problem and waits for the user’s to input a new command).']
+            'I: input a new SMILES string to be added to the current list, if valid (if not, the application reports it found a problem and waits for the user’s to input a new command).',
+            'H: help – list all commands.',
+            'Q: quit – quit the application.']
 
     for str in mes:
         print(str)
@@ -27,7 +29,10 @@ def validate_smiles(smiles_list):
         smiles = SmilesString(i)
         if smiles.validate():
             validated_smiles.append(smiles)
-    smiles_list_class = SmilesStringsList(validated_smiles.sort())
+    if validated_smiles == []:
+        smiles_list_class = SmilesStringsList([])
+    else:
+        smiles_list_class = SmilesStringsList(validated_smiles.sort())
     return smiles_list_class
 
 
@@ -55,7 +60,7 @@ def read_from_terminal(num_of_strings):
 
 
 def write_to_file(smiles_list):
-    file_name = read_command(c.INPUT_FILE_NAME)
+    file_name = read_command(c.PROMPT)
     f = open(str(file_name), 'w')
     for i in smiles_list.smiles_list:
         f.write(i.smiles + '\n')
@@ -63,14 +68,18 @@ def write_to_file(smiles_list):
 
 
 def input_new_smiles(smiles_list):
-    string = read_command(c.INPUT_NEW_SMILES)
+    string = input()
+    string = string.upper()
     smiles_string = SmilesString(string)
+    l = smiles_list.get_list()
     if smiles_string.validate():
-        if smiles_string not in smiles_list.smiles_list:
+        if string not in l:
             smiles_list.add_smiles_string(smiles_string)
-            print(c.SMILES_INSERTED)
+            res = 'SMILES list updated: ' + string + ' inserted'
+            print(res)
         else:
-            print(c.SMILES_ALREADY_LOADED)
+            res = 'SMILES ' + string + ' already loaded'
+            print(res)
 
 
 def obtain_molecular_formula(smiles_list):

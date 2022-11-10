@@ -49,6 +49,12 @@ class SmilesStringsList:
     def get_smiles_string(self, elem):
         return self.smiles_list[elem]
 
+    def get_list(self):
+        res = []
+        for i in self.smiles_list:
+            res.append(i.smiles)
+        return res
+
     def count_substrings(self,substring_list):
         for i in self.smiles_list:
             res = 'In SMILES ' + i.smiles
