@@ -99,7 +99,7 @@ def main():
                     else:
                         res += ' ' + substrings_list[i] +' and'
                 res += ':' + str(dissimilarity)
-
+                print(res)
 
         elif command == c.INPUT:
             f.input_new_smiles(smiles_list)
