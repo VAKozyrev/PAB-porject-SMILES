@@ -30,6 +30,11 @@ SMILES_INVALID = 'String s is not a valid SMILES'
 SMILES_ALREADY_LOADED = 'SMILES s already loaded'
 SMILES_INSERTED  = 'SMILES list updated: s inserted'
 INVALID_INPUT = 'Input invalid'
+LIST_EMPTY_OR_SINGULAR = 'SMILES list empty or singular'
+NUMBER_OF_SUBSTRINGS = 'How many structures (enter a positive number):'
+COMPARE_STRINGS = 'Give two SMILES to compare:'
+UNKNOWN_SMILES_1 = 'SMILES s1 unknown; input a valid one:'
+UNKNOWN_SMILES_2 = 'SMILES s2 unknown; input a valid one:'
 
 #Functions
 INPUT_NEW_SMILES = 'Enter new smiles '

@@ -23,10 +23,8 @@ def main():
     if answer == c.YES:
         file_name = f.read_command(c.PROMPT)
         if f.open_file(file_name):
-
             smiles_items = f.read_from_file(file_name, 1)
             smiles_list = f.validate_smiles(smiles_items)
-            
             if smiles_list.smiles_list == []:
                 print(c.LIST_IS_EMPTY)
             else:
@@ -45,64 +43,56 @@ def main():
 
     while command.upper() != c.QUIT:
 
+
         if command == c.COUNT_SUBSTRINGS:
-
-            f.count_occurences_io(smiles_list)
-
+            while answer != c.FILE and answer != c.TERMINAL:
+                print(c.INVALID_INPUT)
+                answer = f.read_command(c.INPUT_SOURCE)
 
             if answer == c.FILE:
                 file_name = f.read_command(c.PROMPT)
                 if f.open_file(file_name):
-
-                    substrings_list = f.read_substrings_from_file(file_name)
-                    if substrings_list == []:
-                        print(c.LIST_IS_EMPTY)
-                    #else:
-                    #    for smiles in smiles_list.smiles_list:
-                    #        print(smiles)
-                else:
-                    print(c.FAILED_READING + str(file_name))
-
-        elif command == c.MOLECULAR_FORMULA:
-            if smiles_list == []:
-                print(c.LIST_IS_EMPTY)
-            else:
-                f.obtain_molecular_formula(smiles_list)
-
-        if command == c.DISSIMILARITY:
-            f.count_dissimilarity_io()
-
-        elif command == c.INPUT:
-            f.input_new_smiles(smiles_list)
-
-        #elif command ==
-
-        elif command == c.HELP:
-            f.print_help_message()
-
-        else:
-            print(c.INVALID_COMMAND)
-
                     substrings_list = f.read_from_file(file_name, 0)
                     if substrings_list == []:
                         print(c.LIST_IS_EMPTY)
-                    #else:
-                    #   func_name
+                    else:
+                        smiles_list.cout_substrings(substring_list)
                 else:
                     print(c.FAILED_READING + str(file_name))
 
             if answer == c.TERMINAL:
                 num_of_strings = f.read_command(c.PROMPT)
                 substring_list = f.read_from_terminal(num_of_strings)
-                #func
+                smiles_list.cout_substrings(substring_list)
+
 
         elif command == c.MOLECULAR_FORMULA:
-            if smiles_list == []:
+            if smiles_list.smiles_list == []:
                 print(c.LIST_IS_EMPTY)
             else:
                 f.obtain_molecular_formula(smiles_list)
 
-        #elif command == DISSIMILARITY:
+
+        elif command == c.DISSIMILARITY:
+            if smiles_list.smiles_list == [] or len(smiles_list.smiles_list) == 1:
+                print(c.LIST_EMPTY_OR_SINGULAR)
+            elif len(smiles_list.smiles_list) > 1:
+                number_of_substrings = f.read_command(c.NUMBER_OF_SUBSTRINGS)
+                while int(num_of_strings) <= 0:
+                    number_of_substrings = f.read_command(c.NUMBER_OF_SUBSTRINGS)
+
+                substring_list = f.read_from_terminal(number_of_substrings)
+                print(c.COMPARE_STRINGS)
+                str1 = input()
+                str2 = input()
+                while str1 not in smiles_list.smiles_list:
+                    print(c.UNKNOWN_SMILES_1)
+                    str1 = input()
+                while str2 not in smiles_list.smiles_list:
+                    print(c.UNKNOWN_SMILES_2)
+                    str2 = input()
+                dissimilarity = f.count_dissimilarity(str1, str2, substrings_list)
+
 
         elif command == c.INPUT:
             f.input_new_smiles(smiles_list)
