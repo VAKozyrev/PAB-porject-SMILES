@@ -92,6 +92,13 @@ def main():
                     print(c.UNKNOWN_SMILES_2)
                     str2 = input()
                 dissimilarity = f.count_dissimilarity(str1, str2, substrings_list)
+                res = 'Dissimilarity degree between SMILES', str1,'and', str2,'w.r.t'
+                for i in range(len(substrings_list)):
+                    if i == len(substrings_list) - 1:
+                        res += ' ' + substrings_list[i]
+                    else:
+                        res += ' ' + substrings_list[i] +' and'
+                res += ':' + str(dissimilarity)
 
 
         elif command == c.INPUT:
