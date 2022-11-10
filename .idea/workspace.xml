@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c546a419-4ec0-44d5-a506-494055967e3b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/funcs.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/funcs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/smiles_strings_list_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/smiles_strings_list_class.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +94,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="final" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -114,14 +115,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -135,7 +135,6 @@
     </task>
     <servers />
   </component>
-
   <component name="WindowStateProjectService">
     <state width="1398" height="258" key="GridCell.Tab.0.bottom" timestamp="1668007912635">
       <screen x="0" y="0" width="1440" height="900" />
@@ -173,6 +172,5 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="397" y="279" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1667947016539" />
-
   </component>
 </project>
