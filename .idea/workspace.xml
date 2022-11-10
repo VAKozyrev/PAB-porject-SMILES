@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa436b10-f40e-4fba-a953-aa879b14decd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/code/хуй.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/code/out.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/smiles_string_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/smiles_string_class.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/smiles_strings_list_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/smiles_strings_list_class.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +48,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/code/main.py" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
-  <component name="RunManager" selected="Python.хуй">
+  <component name="RunManager" selected="Python.main">
     <configuration name="хуй" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="final" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -139,8 +135,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.хуй" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.хуй" />
       </list>
     </recent_temporary>
   </component>
@@ -176,22 +172,22 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="184" y="109" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1668115158184" />
-    <state width="1419" height="264" key="GridCell.Tab.0.bottom" timestamp="1668116193263">
+    <state width="1419" height="241" key="GridCell.Tab.0.bottom" timestamp="1668117952133">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="264" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1668116193263" />
-    <state width="1419" height="264" key="GridCell.Tab.0.center" timestamp="1668116193262">
+    <state width="1419" height="241" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1668117952133" />
+    <state width="1419" height="241" key="GridCell.Tab.0.center" timestamp="1668117952131">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="264" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1668116193262" />
-    <state width="1419" height="264" key="GridCell.Tab.0.left" timestamp="1668116193261">
+    <state width="1419" height="241" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1668117952131" />
+    <state width="1419" height="241" key="GridCell.Tab.0.left" timestamp="1668117952131">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="264" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1668116193261" />
-    <state width="1419" height="264" key="GridCell.Tab.0.right" timestamp="1668116193263">
+    <state width="1419" height="241" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1668117952131" />
+    <state width="1419" height="241" key="GridCell.Tab.0.right" timestamp="1668117952132">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="264" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1668116193263" />
+    <state width="1419" height="241" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1668117952132" />
     <state width="1419" height="303" key="GridCell.Tab.1.bottom" timestamp="1668115986921">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
