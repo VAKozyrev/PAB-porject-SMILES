@@ -21,7 +21,6 @@ def read_command(text):
     return command
 
 
-
 def validate_smiles(smiles_list):
     validated_smiles = []
     for i in smiles_list:

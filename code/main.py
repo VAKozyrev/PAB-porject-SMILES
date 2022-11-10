@@ -15,7 +15,6 @@ from smiles_strings_list_class import SmilesStringsList
 
 def main():
 
-
     answer = f.read_command(c.LOAD_SOURCE)
     while answer != c.YES and answer != c.NO:
         print(c.INVALID_ANSWER)
