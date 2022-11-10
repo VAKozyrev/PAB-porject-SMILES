@@ -12,7 +12,7 @@ class SmilesString:
         self.smiles = smiles_string
 
     def validate(self):
-        regex = re.compile('((Cl)|(Br)|[CNIFBOPcno])+(@{0,2}[0-9]{0,1}\({0,1}[\=\-#\/]{0,1}((Cl)|(Br)|[CNIFBOPcno])+\){0,1}[0-9]{0,1})*')
+        regex = re.compile('((Cl)|(Br)|[CNIFBOPcno])+(@{0,2}[0-9]{0,1}\({0,1}[\=\-#\/:]{0,1}((Cl)|(Br)|[CNIFBOPcno])+[0-9]{0,1}\){0,1}[0-9]{0,1})*')
         match = regex.match(self.smiles)
         if bool(match):
             return self.smiles == match.group()
