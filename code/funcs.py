@@ -87,11 +87,11 @@ def input_new_smiles(smiles_list):
     else:
         print('String ' + string + ' is not a valid SMILES')
 
+
 def obtain_molecular_formula(smiles_list):
-    for smiles in smiles_list:
-        smiles_string = smiles_list.get_smiles_string(smiles)
-        molecular_formula = smiles_string.get_molecular_formula()
-        result = smiles_string + " " + "is" + " " + molecular_formula
+    for smiles in smiles_list.smiles_list:
+        molecular_formula = smiles.get_molecular_formula()
+        result = smiles.smiles + " " + "is" + " " + molecular_formula
         print(result)
 
 
@@ -104,7 +104,6 @@ def count_occurances(string, substring):
             counter += len(substring)
         else: counter += 1
     return occurances
-
 
 
 

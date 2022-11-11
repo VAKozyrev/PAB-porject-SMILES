@@ -25,10 +25,18 @@ class SmilesString:
                 break
         if dic['('] != dic[')']:
             check = False
+        if self.smiles[len(self.smiles)-1] in '=/\\#':
+            check = False
         if bool(match) and check:
             return self.smiles == match.group()
         else:
             return False
+
+
+    def get_slice(self, start, end):
+        return self.smiles[start:end]
+
+
 
     def get_molecular_formula(self):
         elements = {"B": 0,
@@ -45,15 +53,20 @@ class SmilesString:
         molecular_formula = ""
 
         for i in range(len(self.smiles)):
-            if self.smiles[i:i+1] in elements:
-                elements[self.smiles[i:i+1]] += 1
-            else:
-                if self.smiles[i].upper() in elements:
-                    elements[self.smiles[i].upper()] += 1
+            if self.get_slice(i, i+2) in elements:
+                elements[self.get_slice(i, i+2)] += 1
 
-        for key in elements:
+            else:
+                if self.smiles[i].upper() in elements and self.get_slice(i, i+2) != "Br" and self.get_slice(i, i+2) != "Cl":
+                    elements[self.smiles[i].upper()] += 1
+        keys = list(elements.keys())
+        keys.sort()
+        for key in keys:
             if elements[key] != 0:
-                molecular_formula += key
-                molecular_formula += elements[key]
+                if elements[key] == 1:
+                    molecular_formula += key
+                else:
+                    molecular_formula += key
+                    molecular_formula += str(elements[key])
 
         return molecular_formula
