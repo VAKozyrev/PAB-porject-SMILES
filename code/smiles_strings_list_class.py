@@ -56,15 +56,28 @@ class SmilesStringsList:
         return res
 
     def count_substrings(self,substring_list):
+        res_final = []
         for i in self.smiles_list:
-            res = 'In SMILES ' + i.smiles
+            res = i.smiles + ' containes '
             branches = separate_branches(i.smiles)
-            for j in substring_list:
+            for j in range(len(substring_list)):
                 occurences = 0
                 for k in branches:
-                    occurences += count_occurances(k,j)
-                res += ' substring ' + j + ' occurs ' + str(occurences)
-            print(res)
+                    occurences += count_occurances(k,substring_list[j])
+                if j == 0:
+                    if occurences == 1:
+                        res +=  substring_list[j] + ' ' + str(occurences) + ' time'
+                    else:
+                        res +=  substring_list[j] + ' ' + str(occurences) + ' times'
+                else:
+                    if occurences == 1:
+                        res +=  ' and ' + substring_list[j] + ' ' + str(occurences) + ' time'
+                    else:
+                        res +=  ' and ' + substring_list[j] + ' ' + str(occurences) + ' times'
+            res_final.append(res)
+        res_final.sort()
+        for i in res_final:
+            print(i)
 
     def add_smiles_string(self, smiles_string):
         self.smiles_list.append(smiles_string)

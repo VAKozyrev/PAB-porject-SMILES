@@ -45,6 +45,7 @@ def main():
 
 
         if command.upper() == c.COUNT_SUBSTRINGS:
+            answer = f.read_command(c.INPUT_SOURCE)
             while answer.upper() != c.FILE and answer.upper() != c.TERMINAL:
                 print(c.INVALID_INPUT)
                 answer = f.read_command(c.INPUT_SOURCE)
@@ -63,7 +64,7 @@ def main():
             if answer.upper() == c.TERMINAL:
                 num_of_strings = f.read_command(c.PROMPT)
                 substring_list = f.read_from_terminal(num_of_strings)
-                smiles_list.cout_substrings(substring_list)
+                smiles_list.count_substrings(substring_list) #Error
 
 
         elif command.upper() == c.MOLECULAR_FORMULA:
