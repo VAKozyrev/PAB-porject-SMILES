@@ -9,15 +9,15 @@ NO = 'N'
 YES = 'Y'
 
 #INTERACTIONS
-LOAD_SOURCE = 'Load input from file (Y/N)?'
+LOAD_SOURCE = 'Load input from file (Y/N)?\n'
 INPUT_COMMAND = 'Input command to execute:'
 INPUT_SOURCE = 'Input source (F/T)'
 INPUT_FILE_NAME = 'Input file name: '
-SAVE_SMILES = 'Save SMILES list to file (Y/N)?'
+SAVE_SMILES = 'Save SMILES list to file (Y/N)?\n'
 GOODBYE = 'Goodbye.'
 LIST_IS_EMPTY = 'SMILES list empty'
 HELP_MESSAGE = 'Help Message'
-PROMPT = '>'
+PROMPT = '>\n'
 FILE = 'F'
 TERMINAL = 'T'
 

@@ -21,7 +21,7 @@ def main():
         answer = f.read_command(c.LOAD_SOURCE)
 
     if answer.upper() == c.YES:
-        file_name = f.read_command(c.PROMPT)
+        file_name = input(c.PROMPT)
         if f.open_file(file_name):
             smiles_items = f.read_from_file(file_name, 0)
             smiles_list = f.validate_smiles(smiles_items)

@@ -38,8 +38,9 @@ def validate_smiles(smiles_list):
 
 def open_file(file_name):
     try:
-        with open(str(file_name), 'r') as file_handle:
-            return True
+        file_handle = open(file_name, 'r')
+        file_handle.close()
+        return True
     except:
         return False
 
