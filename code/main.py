@@ -77,28 +77,28 @@ def main():
             if smiles_list.smiles_list == [] or len(smiles_list.smiles_list) == 1:
                 print(c.LIST_EMPTY_OR_SINGULAR)
             elif len(smiles_list.smiles_list) > 1:
-                number_of_substrings = f.read_command(c.NUMBER_OF_SUBSTRINGS)
-                while int(num_of_strings) <= 0:
+                number_of_substrings = int(f.read_command(c.NUMBER_OF_SUBSTRINGS))
+                while int(number_of_substrings) <= 0:
                     number_of_substrings = f.read_command(c.NUMBER_OF_SUBSTRINGS)
 
                 substring_list = f.read_from_terminal(number_of_substrings)
                 print(c.COMPARE_STRINGS)
                 str1 = input()
                 str2 = input()
-                while str1 not in smiles_list.smiles_list:
+                while str1 not in smiles_list.get_smiles_list():
                     print(c.UNKNOWN_SMILES_1)
                     str1 = input()
-                while str2 not in smiles_list.smiles_list:
+                while str2 not in smiles_list.get_smiles_list():
                     print(c.UNKNOWN_SMILES_2)
                     str2 = input()
-                dissimilarity = f.count_dissimilarity(str1, str2, substrings_list)
-                res = 'Dissimilarity degree between SMILES', str1,'and', str2,'w.r.t'
-                for i in range(len(substrings_list)):
-                    if i == len(substrings_list) - 1:
-                        res += ' ' + substrings_list[i]
+                dissimilarity = f.count_dissimilarity(str1, str2, substring_list)
+                res = 'Dissimilarity degree between SMILES ' + str1 + ' and ' + str2 +' w.r.t'
+                for i in range(len(substring_list)):
+                    if i == len(substring_list) - 1:
+                        res += ' ' + substring_list[i]
                     else:
-                        res += ' ' + substrings_list[i] +' and'
-                res += ':' + str(dissimilarity)
+                        res += ' ' + substring_list[i] +' and'
+                res += ': ' + str(dissimilarity)
                 print(res)
 
         elif command.upper() == c.INPUT:

@@ -19,7 +19,7 @@ def print_help_message():
 
 
 def read_command(text):
-    command = input(str(text))
+    command = input(text)
     return command
 
 
@@ -53,9 +53,10 @@ def read_from_file(file_name, string_from):
 
 def read_from_terminal(num_of_strings):
     substrings_list = []
-    while num_of_strings > 0:
+    for i in range(int(num_of_strings)):
         smiles = read_command(c.PROMPT)
         substrings_list.append(smiles)
+
     return substrings_list
 
 
