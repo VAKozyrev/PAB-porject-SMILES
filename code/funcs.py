@@ -25,6 +25,7 @@ def read_command(text):
 
 def validate_smiles(smiles_list):
     validated_smiles = []
+    smiles_list.sort()
     for i in smiles_list:
         smiles = SmilesString(i)
         if smiles.validate():
@@ -32,7 +33,7 @@ def validate_smiles(smiles_list):
     if validated_smiles == []:
         smiles_list_class = SmilesStringsList([])
     else:
-        smiles_list_class = SmilesStringsList(validated_smiles.sort())
+        smiles_list_class = SmilesStringsList(validated_smiles)
     return smiles_list_class
 
 
@@ -48,6 +49,8 @@ def open_file(file_name):
 def read_from_file(file_name, string_from):
     file_handle = open(str(file_name), 'r')
     all_strings_list = file_handle.readlines()[string_from:] # read from 2nd line
+    for i in range(len(all_strings_list)):
+        all_strings_list[i] = all_strings_list[i].replace('\n','')
     file_handle.close()
     return all_strings_list
 

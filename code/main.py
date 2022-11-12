@@ -22,14 +22,15 @@ def main():
 
     if answer.upper() == c.YES:
         file_name = input(c.PROMPT)
+        print(file_name)
         if f.open_file(file_name):
             smiles_items = f.read_from_file(file_name, 0)
             smiles_list = f.validate_smiles(smiles_items)
             if smiles_list.smiles_list == []:
                 print(c.LIST_IS_EMPTY)
             else:
-                for smiles in smiles_list.smiles_list:
-                    print(smiles.smiles)
+                for smiles in smiles_list.get_smiles_list():
+                    print(smiles)
         else:
             print(c.FAILED_READING + str(file_name))
 
