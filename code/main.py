@@ -22,7 +22,7 @@ def main():
 
     if answer.upper() == c.YES:
         file_name = input(c.PROMPT)
-        print(file_name)
+        #print(file_name)
         if f.open_file(file_name):
             smiles_items = f.read_from_file(file_name, 0)
             smiles_list = f.validate_smiles(smiles_items)
@@ -33,6 +33,7 @@ def main():
                     print(smiles)
         else:
             print(c.FAILED_READING + str(file_name))
+            smiles_list = SmilesStringsList([])
 
     if answer.upper() == c.NO:
         smiles_list = SmilesStringsList([])
@@ -63,7 +64,7 @@ def main():
                     print(c.FAILED_READING + str(file_name))
 
             if answer.upper() == c.TERMINAL:
-                num_of_strings = f.read_command(c.PROMPT)
+                num_of_strings = input()
                 substring_list = f.read_from_terminal(num_of_strings)
                 smiles_list.count_substrings(substring_list) #Error
 
@@ -88,13 +89,14 @@ def main():
                 str1 = input()
                 str2 = input()
                 while str1 not in smiles_list.get_smiles_list():
-                    print(c.UNKNOWN_SMILES_1)
+                    print('SMILES ' + str1 + ' unknown; input a valid one:')
                     str1 = input()
                 while str2 not in smiles_list.get_smiles_list():
-                    print(c.UNKNOWN_SMILES_2)
+                    print('SMILES ' + str2 + ' unknown; input a valid one:')
                     str2 = input()
                 dissimilarity = f.count_dissimilarity(str1, str2, substring_list)
                 res = 'Dissimilarity degree between SMILES ' + str1 + ' and ' + str2 +' w.r.t'
+                substring_list.sort()
                 for i in range(len(substring_list)):
                     if i == len(substring_list) - 1:
                         res += ' ' + substring_list[i]

@@ -58,7 +58,7 @@ def read_from_file(file_name, string_from):
 def read_from_terminal(num_of_strings):
     substrings_list = []
     for i in range(int(num_of_strings)):
-        smiles = read_command(c.PROMPT)
+        smiles = input()
         substrings_list.append(smiles)
 
     return substrings_list
@@ -67,7 +67,7 @@ def read_from_terminal(num_of_strings):
 def write_to_file(smiles_list):
     file_name = read_command(c.PROMPT)
     f = open(str(file_name), 'w')
-    for i in smiles_list.smiles_list:
+    for i in smiles_list.get_smiles_list():
         f.write(i.smiles + '\n')
     f.close()
 

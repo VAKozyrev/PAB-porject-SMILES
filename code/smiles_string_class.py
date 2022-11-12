@@ -12,7 +12,7 @@ class SmilesString:
         self.smiles = smiles_string
 
     def validate(self):
-        regex = re.compile('((Cl)|(Br)|[CNIFBrlOPcno])+((\[C@{0,2}H\])*@{0,2}[0-9]{0,1}\({0,1}[\\\=#\/]{0,1}((Cl)|(Br)|[CNIFBOPcno])*\){0,1}[0-9]{0,1})*')
+        regex = re.compile('((Cl)|(Br)|[CNIFBrlOPcno])+((\[C@{0,2}H\])*@{0,2}[0-9]{0,1}\({0,1}[\\\=\-\:#\/]{0,1}((Cl)|(Br)|[CNIFBOPcno])*\){0,1}[0-9]{0,1})*')
         match = regex.match(self.smiles)
         dic = {'1' : 0, '2': 0, '3' : 0, '4' : 0, '5' : 0, '6' : 0, '7' : 0, '8' : 0, '9' : 0, '(' : 0, ')' : 0}
         for i in self.smiles:
@@ -27,6 +27,9 @@ class SmilesString:
             check = False
         if self.smiles[len(self.smiles)-1] in '=/\\#':
             check = False
+        for i in range(len(self.smiles) - 1 ):
+            if self.smiles[i] in '-/1234567890=#\\' and self.smiles[i] == self.smiles[i+1]:
+                check = False
         if bool(match) and check:
             return self.smiles == match.group()
         else:
