@@ -1,5 +1,8 @@
 N
-M
+I
+CBr
+I
 CC(CO)CCCN
+M
 Q
 N
