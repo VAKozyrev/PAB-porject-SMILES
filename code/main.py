@@ -95,7 +95,7 @@ def main():
                     print('SMILES ' + str2 + ' unknown; input a valid one:')
                     str2 = input()
                 dissimilarity = f.count_dissimilarity(str1, str2, substring_list)
-                res = 'Dissimilarity degree between SMILES ' + str1 + ' and ' + str2 +' w.r.t'
+                res = 'Dissimilarity degree between SMILES ' + str1 + ' and ' + str2 +' w.r.t.'
                 substring_list.sort()
                 for i in range(len(substring_list)):
                     if i == len(substring_list) - 1:

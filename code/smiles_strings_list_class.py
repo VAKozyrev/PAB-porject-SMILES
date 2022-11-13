@@ -58,7 +58,7 @@ class SmilesStringsList:
     def count_substrings(self,substring_list):
         res_final = []
         for i in self.smiles_list:
-            res = i.smiles + ' containes '
+            res = i.smiles + ' contains '
             branches = separate_branches(i.smiles)
             for j in range(len(substring_list)):
                 occurences = 0
